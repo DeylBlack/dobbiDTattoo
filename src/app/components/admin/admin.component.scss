@@ -1,0 +1,16 @@
+.admin {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  mat-drawer-container {
+    height: 100%;
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+}

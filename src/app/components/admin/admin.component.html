@@ -1,0 +1,20 @@
+<div class="admin">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="menu">
+        <button [routerLink]="'/admin/images'">Images</button>
+        <button [routerLink]="'/admin/appointments'">Appointments</button>
+        <button (click)="logout()">Log Out</button>
+      </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <button type="button" (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container>
+
+  <router-outlet></router-outlet>
+
+</div>

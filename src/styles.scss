@@ -1,0 +1,60 @@
+// regular style toast
+@import 'ngx-toastr/toastr.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  p {
+    margin: 0;
+  }
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('./assets/fonts/Inter-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'InterExtraLight';
+  src: url('./assets/fonts/Inter-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'InterLight';
+  src: url('./assets/fonts/Inter-Light.ttf');
+}
+
+@font-face {
+  font-family: 'InterRegular';
+  src: url('./assets/fonts/Inter-Regular.ttf');
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+  display:none;
+}

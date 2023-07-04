@@ -1,0 +1,19 @@
+<div class="auth-wrapper">
+  <form class="auth-wrapper-form" *ngIf="!isLoading; else loading" [formGroup]="authForm">
+    <p>Sign In to <b>DobbidD</b> Tattoo</p>
+
+    <span>Login</span>
+
+    <input type="text" autocomplete="off" formControlName="login">
+
+    <span>Password</span>
+
+    <input type="password" formControlName="password">
+
+    <button type="button" (click)="auth()" [disabled]="authForm.invalid">Sign In</button>
+  </form>
+
+  <ng-template #loading>
+    <app-loading></app-loading>
+  </ng-template>
+</div>
