@@ -7,44 +7,63 @@
     </div>
 
     <div class="images">
-<!--      <img data-aos="fade-up"-->
-<!--           data-aos-offset="200"-->
-<!--           data-aos-duration="1000"-->
-<!--           data-aos-easing="ease-in-out"-->
-<!--           data-aos-mirror="true"-->
-<!--           data-aos-once="false"-->
-<!--           class="left-appolo"-->
-<!--           src="./assets/images/left-appolo.png"-->
-<!--           alt="Appolone">-->
-<!--      <img data-aos="fade-up"-->
-<!--           data-aos-offset="200"-->
-<!--           data-aos-duration="1000"-->
-<!--           data-aos-easing="ease-in-out"-->
-<!--           data-aos-mirror="true"-->
-<!--           data-aos-once="false"-->
-<!--           class="tattoo-machine" src="./assets/images/tattoo-machine.png" alt="Tattoo Machine">-->
-<!--      <img data-aos="fade-up"-->
-<!--      data-aos-offset="200"-->
-<!--      data-aos-duration="1000"-->
-<!--      data-aos-easing="ease-in-out"-->
-<!--      data-aos-once="false" class="right-appolo" src="./assets/images/right-appolo.png" alt="Tattoo Machine">-->
-<!--      <img class="logo" src="./assets/images/logo.png" alt="Tattoo Machine">-->
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out"
+           data-aos-mirror="true"
+           data-aos-once="false"
+           class="left-appolo"
+           src="./assets/images/left-appolo.png"
+           alt="Appolone">
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1500"
+           data-aos-easing="ease-in-out"
+           data-aos-mirror="true"
+           data-aos-once="false"
+           class="tattoo-machine"
+           src="./assets/images/tattoo-machine.png"
+           alt="Tattoo Machine">
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out"
+           data-aos-once="false"
+           class="right-appolo"
+           src="./assets/images/right-appolo.png"
+           alt="Tattoo Machine">
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out"
+           data-aos-mirror="true"
+           data-aos-once="false"
+           class="logo"
+           src="./assets/images/logo.png"
+           alt="Tattoo Machine">
 
-<!--      <img class="background hands" src="./assets/images/hands.png" alt="Tattoo Machine">-->
-<!--      <img class="background right" src="./assets/images/right-flower.png" alt="Tattoo Machine">-->
-<!--      <img class="background left" src="./assets/images/left-flower.png" alt="Tattoo Machine">-->
+      <img class="background hands" src="./assets/images/hands.png" alt="Tattoo Machine">
+      <img class="background right" src="./assets/images/right-flower.png" alt="Tattoo Machine">
+      <img class="background left" src="./assets/images/left-flower.png" alt="Tattoo Machine">
     </div>
+
+    <button class="make-an-appointment" (click)="openDialog()">
+      Записатись
+      <br>
+      на сеанс
+    </button>
   </div>
 
   <div class="wrapper-cabinet" id="cabinet">
-    <div class="video-shadow">
-      <div class="studio-text">
-        <p>Ваша затишна</p>
-        <br>
-        <p>Студiя</p>
-      </div>
-    </div>
-    <video autoplay muted loop id="myVideo">
+<!--    <div class="video-shadow">-->
+<!--      <div class="studio-text">-->
+<!--        <p>Ваша затишна</p>-->
+<!--        <br>-->
+<!--        <p>Студiя</p>-->
+<!--      </div>-->
+<!--    </div>-->
+    <video autoplay loop id="myVideo">
       <source src="./assets/video/videoplayback.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
@@ -53,7 +72,20 @@
 
   <div class="wrapper-about">
     <div class="my-photo">
-      <img src="./assets/images/me.png">
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out"
+           data-aos-mirror="true"
+           data-aos-once="false"
+           src="./assets/images/me.png">
+      <img data-aos="fade-up"
+           data-aos-offset="200"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out"
+           data-aos-mirror="true"
+           data-aos-once="false"
+           class="blur" src="./assets/images/me_blur.png">
     </div>
 
     <div class="description">
@@ -68,10 +100,33 @@
   </div>
 
   <div class="wrapper-portfolio">
-    <p>ПОРТФОЛІО</p>
+    <ng-container *ngFor="let portfolioImage of portfolio">
+      <img [src]="'./assets/images/'+ portfolioImage +'.png'">
+    </ng-container>
   </div>
 
   <div class="wrapper-reviews">
+    <p class="title">FEEDBACK</p>
 
+    <div class="feedbacks">
+      <ng-container *ngFor="let review of reviews$ | async">
+        <div class="feedbacks-item">
+          <div class="feedbacks-item-header">
+            {{review.date | date:'MM/dd/yy' | customDate}}
+            {{review.author}}
+          </div>
+
+          <div class="feedbacks-item-review">
+            {{review.review}}
+          </div>
+        </div>
+      </ng-container>
+
+      <button class="more">Показати ще...</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Footer
   </div>
 </div>

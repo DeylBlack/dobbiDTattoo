@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MainComponent } from './components/main/main.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -23,10 +24,10 @@ import { MainComponent } from './components/main/main.component';
     BrowserModule,
     SharedModule,
     HttpClientModule,
-    RouterOutlet,
     AuthModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
