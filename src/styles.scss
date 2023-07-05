@@ -1,6 +1,12 @@
 // regular style toast
 @import 'ngx-toastr/toastr.css';
 
+.cdk-global-scrollblock {
+  position: initial;
+  width: 100%;
+  overflow-y: initial;
+}
+
 body {
   margin: 0;
   padding: 0;
